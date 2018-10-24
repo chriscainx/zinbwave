@@ -58,7 +58,12 @@ solveRidgeRegression <- function(x, y, beta=rep(0,NCOL(x)), epsilon=1e-6, family
     }
 
     # optimize
-    m <- optim( fn=f , gr=g , par=beta, control=list(trace=0) , method="BFGS")
+    m <- optim( fn=f , gr=g , par=beta, control=list(trace=0) , method="L-BFGS-B")
     m$par
 
+}
+
+solveRidgeRegressionCpp <- function(x, y, beta=rep(0,NCOL(x), epsilon=1e-6, family=c("gaussian", "binomial"), offset=rep(0, NROW(x)))) {
+    family <- match.arg(family)
+    
 }
