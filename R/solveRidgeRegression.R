@@ -62,8 +62,3 @@ solveRidgeRegression <- function(x, y, beta=rep(0,NCOL(x)), epsilon=1e-6, family
     m$par
 
 }
-
-solveRidgeRegressionCpp <- function(x, y, beta=rep(0,NCOL(x), epsilon=1e-6, family=c("gaussian", "binomial"), offset=rep(0, NROW(x)))) {
-    family <- match.arg(family)
-    
-}
